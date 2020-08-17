@@ -1,2 +1,2 @@
 a = int(input(),8)
-print(a)
+print(str(a))
