@@ -1,4 +1,4 @@
 a = list(map(str,input()))
 
-for index in len(a):
-    print(a[index])
+for index in range(len(a)):
+    print("'"+a[index]+"'")
