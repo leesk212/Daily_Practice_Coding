@@ -1,10 +1,5 @@
+def f(x):
+    return {'A':'best!!!','B':'good!!','C':'run!','D':'slowly~'}.get(x,'what?')
 data = input()
+print(f(data))
 
-if data =='A':
-    print('best!!!')
-    if data =='B':
-        print('good!!')
-        if data =='C':
-            print('run!')
-            if data =='D':
-                print('slowly~')
