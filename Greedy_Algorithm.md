@@ -35,3 +35,43 @@
 * 부분적으로 최적의 해를 선택함으로써 전체적으로 최적의 해를 만든다. greedy라는 것은 욕심쟁이 선택이 될 뿐만아니라, 부분적으로 최적의 선택일때 최선의 선택을 할때 그 순간에 베스트하게 보이는 선택들을 한다.
 * 다른말로 우리가 어떤 선택을 할지 고려할 때 가장 최적의 선택을 고려하는데 **모든 부분문제들에 대한 결과들을 모르는 상황에서 best로 보이는 것을 선택한다** 계속적으로 이를 수행할 결과, 부분문제들이 계속 size가 줄어들게 되면서 최종적으로 전체를 다 이루게 되는 형태이다.
 
+# Dynamic Programming vs Greedy
+* Greedy Choice(Locality Optimal 한것을 모두 선택하였더니 부분문제들이 줄어들며 이것들이 모여 최종적으로 Global한 해가 된다)와 Optimal-Substructure 을 만족하면 Greedy Algorithm
+* Optimal - Substructure은 최적은 부분 성질을 만족하는 것이다.
+* Greedy -> Top down
+* Greedy에서는 어떤 것을 선택을 하던 그 상황에서만 가장 최고인 것을 선택한다. (다른 것들을 신경 쓰지 않고!!!)
+* Greedy Algorithm에서 만든 선택들에는 다른 것에는 선택을 받을지 모를 지라도, 미래에 일어날 선택들에 종속 될 수 없고, 
+* DP는 부분문제들을 푸는데, 첫번째 문제를 풀기 전에 subp problem을 먼저 푼다. 
+
+# 0-1 vs Fractional
+* 0-1 : Greedy Property 만족 x
+* Fractional : Greedy Property 만족
+
+# Dynamic Porgramming
+* 부분문제들의 해들을 만족한다.
+* 하지만 Subproblem들의 해들의 선톡 의존(종속이 된다.)한다. (Greedy Algorithm과 차이점)
+* DP를 해결할때 대부분 bottump up을 사용하는데, 이렇게 하는 것은 결국, Subproblem들을 알아야 더 큰 부분문제들을 해결하는 것이기에
+* Bottom up 대신에 Top Down으로도 풀 수 있는데 memorization을 통해 풀 수도 있다.
+* 부분 문제들을 풀어야만 한다. 
+
+# Greedy Choice를 더욱 효율적으로 하는 법
+* 전처리를 하거나, 또는 Priority Queue를 사용함 (다이스트라 or 밸만코드)
+
+
+# Optimal - Substructure Property
+* optimal substructure은 부분들의 해들이 최적의 해를 보여주고 있으면 optimal substructure이 된다고 볼 수 있다.
+* 부분문제에 대한 Greedy한 선택과 결합이 되어서 적절한 해가 산출되는 것이 필요하다.
+* 원래문제의 최적의해가 부분문제의 최적의 해를 포함 하고 있으면 된다.  
+* implicitly 하게 문제를 해결 하는 것이다. 어떤거의 greedy라면 부분문제들의 수학적 귀납법을 해결하는 것이다.
+
+
+
+# 0-1 knapsack problem
+* 배낭문제
+* 배낭문제 유형중에 0-1이다. 
+* 도둑이 가게의 물건을 훔치려는데 n개의 item들이 있다. 이때 i번째 물건의 값어치는 vi이다. 그리고 이것의 무게는 wi이다.  
+* 배낭에 최대한 비싼 물건들을 담아 두는 것이다. 그러나 최대한 많아야하며 그의 배낭에 Wpound만큼만 담을 수 있으며 Maximum weight이다. (이때 이것은 integer이고 이때 얼마나의 무게를 취득해야만 하는가?)
+* 0-1문제라고 불리는 이유는 "그물건에 대해서 갖거나 안갖거나 이분법으로 나타낼 수 있기 때문이다" 2진결정!!
+* item의 부분적인 양을 갖고갈 수 없다. 아이템을 조개서 가져갈 수 있으면 Fractional이 된다.!! 
+* 아이템을 1번이상을 가져가는 것은 할 수 없다. 
+* 여러개를 고려하고 싶으면 index 는 1~5까지 동일하게 두면 된다. 
