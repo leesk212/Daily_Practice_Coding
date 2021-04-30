@@ -38,3 +38,15 @@ recursive_function()
 * 필요한 정보만 저장하기 때문에 메모리 효율적 사용 가능
 * 하지만 인접 정보에 대한 데이터 확인이 느리다.
 ### Example Code
+```python
+def dfs(graph, v, visited):
+   visited[v] = True
+   print(v, end=' ')
+   for i in graph[v]:
+      if not visited[i]:
+         dfs(graph, i, visited)
+         
+graph = [ [], [2,3,8], [1,7], [1,4,5], [3,5], [3,4], [7], [2,6,8], [1,7] ] 
+visited = [False] * 9
+dfs(graph,1,visited)
+```
