@@ -55,7 +55,7 @@ dfs(graph,1,visited)
 * 가까운 노드부터 탐색하는 알고리즘
 * queue 자료구조를 사용한다.
 * DFS보다 빠른 접근성을 야기한다.
-```
+```python
 from collections import deque
 
 def bfs(graph, start, visited):
