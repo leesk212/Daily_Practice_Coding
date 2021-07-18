@@ -1,0 +1,198 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled8.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMfcSFY6pmRaCQGJdKEPAx/",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/leesk212/Daily_Practice_Coding/blob/master/Greedy%20%EC%8B%A4%EC%A0%84\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "hZW7RIgi_icX"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MluJ9MVZ-KGX"
+      },
+      "source": [
+        "#4 "
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oK-e5pwq7paN",
+        "outputId": "d180e9ff-60ea-42a9-b821-54f007d9b0f4"
+      },
+      "source": [
+        "N = int(input())\n",
+        "coins = list(map(int,input().split(' ')))\n",
+        "print(N,coins)"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "5\n",
+            "3 2 1 1 9\n",
+            "5 [3, 2, 1, 1, 9]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DuoIbcBZ7WJl",
+        "outputId": "78f3f211-8df3-43b4-b3ae-4c0840a05cd2"
+      },
+      "source": [
+        "coins.sort()\n",
+        "print(coins)"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[1, 1, 2, 3, 9]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3RoULKRW8y_k",
+        "outputId": "a27117c3-1d22-4b0f-e1aa-6f278350d26e"
+      },
+      "source": [
+        "answer = 1\n",
+        "for x in coins:\n",
+        "  if answer < x:\n",
+        "    break\n",
+        "  answer += x\n",
+        "\n",
+        "print(answer)"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "8\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bbEhkhPB-LmA"
+      },
+      "source": [
+        "#5"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "w9EIxCBp-Jmu",
+        "outputId": "01fd6928-0a35-4208-88c0-74814542b97d"
+      },
+      "source": [
+        "N,M = map(int,input().split(' '))\n",
+        "bolls = list(map(int,input().split(' ')))"
+      ],
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "8 5\n",
+            "1 5 4 3 2 4 5 2\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o4Yf0G1G-j4M",
+        "outputId": "9250f099-4dd8-4b52-db18-817f3487a038"
+      },
+      "source": [
+        "from itertools import combinations\n",
+        "list_bolls = list(combinations(bolls,2))\n",
+        "print(len(list_bolls))\n",
+        "answer = 0\n",
+        "for each_weight in list_bolls:\n",
+        "  A,B = each_weight\n",
+        "  if A != B:\n",
+        "    answer += 1\n",
+        "\n",
+        "print(answer)\n"
+      ],
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "28\n",
+            "25\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
